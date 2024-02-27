@@ -23,7 +23,10 @@ The Apex Legends Prometheus Exporter can be easily run as a container. This sect
 
 To pull the latest version of the Apex Legends Prometheus Exporter image, use the following command:
 ```sh
-docker pull ghcr.io/chkpwd/apex-legends-exporter:latest && \
+docker pull ghcr.io/chkpwd/apex-legends-exporter:latest
+```
+Run the container:
+```sh
 docker run --rm -p 5000:5000 \
   -e USER_ID="your_user_id" \
   -e PLAYER_NAME="player_name" \ # OPTIONAL, either USER_ID or PLAYER_NAME needs to be specified
