@@ -539,11 +539,11 @@ if __name__ == "__main__":
     )
     map_data = MapDataCollector(**credentials)
 
-    collector = ApexCollector(player_data, map_data)
-
     # Unregister default collectors
     for collector in [PROCESS_COLLECTOR, PLATFORM_COLLECTOR, GC_COLLECTOR]:
         REGISTRY.unregister(collector)
+
+    collector = ApexCollector(player_data, map_data)
 
     start_http_server(port=5000)
 
