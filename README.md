@@ -41,6 +41,7 @@ services:
       - "5000:5000"
     environment:
       USER_ID: "your_user_id"
+      PLAYER_NAME: "player_name" \ # OPTIONAL, either USER_ID or PLAYER_NAME needs to be specified
       API_KEY: "your_api_key"
       PLATFORM: "PC"
 ```
