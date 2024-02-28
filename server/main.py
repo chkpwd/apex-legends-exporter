@@ -309,122 +309,122 @@ class ApexCollector:
         )
 
         self.player_platform = Info(
-            "player_platform", "Platform of the player", registry=registry
+            "apex_player_platform", "Platform of the player", registry=registry
         )
 
         self.level = Gauge("player_level", "Level of the player", registry=registry)
 
         self.next_level_percentage = Gauge(
-            "player_next_level_percentage",
+            "apex_player_next_level_percentage",
             "Next level percentage of the player",
             registry=registry,
         )
 
-        self.banned = Info("player_banned", "Is the player banned", registry=registry)
+        self.banned = Info("apex_player_banned", "Is the player banned", registry=registry)
 
         self.ban_duration = Gauge(
-            "player_ban_duration", "Ban duration of the player", registry=registry
+            "apex_player_ban_duration", "Ban duration of the player", registry=registry
         )
 
         self.br_rank_name = Info(
-            "player_br_rank_name", "BR Rank Name of the player", registry=registry
+            "apex_player_br_rank_name", "BR Rank Name of the player", registry=registry
         )
 
         self.br_rank_score = Gauge(
-            "player_br_rank_score", "BR Rank Score of the player", registry=registry
+            "apex_player_br_rank_score", "BR Rank Score of the player", registry=registry
         )
 
         self.br_rank_div = Gauge(
-            "player_br_rank_div", "BR Rank Division of the player", registry=registry
+            "apex_player_br_rank_div", "BR Rank Division of the player", registry=registry
         )
 
         self.arena_rank_name = Info(
-            "player_arena_rank_name", "Arena Rank Name of the player", registry=registry
+            "apex_player_arena_rank_name", "Arena Rank Name of the player", registry=registry
         )
 
         self.arena_rank_score = Gauge(
-            "player_arena_rank_score",
+            "apex_player_arena_rank_score",
             "Arena Rank Score of the player",
             registry=registry,
         )
 
         self.arena_rank_div = Gauge(
-            "player_arena_rank_div",
+            "apex_player_arena_rank_div",
             "Arena Rank Division of the player",
             registry=registry,
         )
 
         self.battle_pass_level = Gauge(
-            "player_battle_pass_level",
+            "apex_player_battle_pass_level",
             "Battle Pass Level of the player",
             registry=registry,
         )
 
         self.battle_pass_history = Gauge(
-            "player_battle_pass_history",
+            "apex_player_battle_pass_history",
             "Battle Pass History of the player",
             registry=registry,
         )
 
         self.lobby_state = Info(
-            "player_lobby_state", "Lobby state of the player", registry=registry
+            "apex_player_lobby_state", "Lobby state of the player", registry=registry
         )
 
         self.is_online = Gauge(
-            "player_is_online", "Is the player online", registry=registry
+            "apex_player_is_online", "Is the player online", registry=registry
         )
 
         self.is_in_game = Gauge(
-            "player_is_in_game", "Is the player in a game", registry=registry
+            "apex_player_is_in_game", "Is the player in a game", registry=registry
         )
 
         self.party_full = Info(
-            "player_party_full", "Is the player in a party", registry=registry
+            "apex_player_party_full", "Is the player in a party", registry=registry
         )
 
         self.selected_legend = Info(
-            "player_selected_legend", "Name of the selected legend", registry=registry
+            "apex_player_selected_legend", "Name of the selected legend", registry=registry
         )
 
         self.active_legend = Info(
-            "player_active_legend", "Name of the active legend", registry=registry
+            "apex_player_active_legend", "Name of the active legend", registry=registry
         )
 
         self.active_legend_kills = Gauge(
-            "player_active_legend_kills",
+            "apex_player_active_legend_kills",
             "Total kills of the active legend",
             registry=registry,
         )
 
         self.current_state = Info(
-            "player_current_state", "Current state of the player", registry=registry
+            "apex_player_current_state", "Current state of the player", registry=registry
         )
 
         self.legend_kills = Gauge(
-            "player_legend_kills",
+            "apex_player_legend_kills",
             "Total kills for each legend",
             ["legend_name"],
             registry=registry,
         )
 
         self.kills = Gauge(
-            "player_kills_total", "Total kills of the player", registry=registry
+            "apex_player_kills_total", "Total kills of the player", registry=registry
         )
 
         self.kill_death_ratio = Gauge(
-            "player_kill_death_ratio",
+            "apex_player_kill_death_ratio",
             "Kill/Death Ratio of the player",
             registry=registry,
         )
 
         self.mozambique_cluster_server = Info(
-            "player_mozambique_cluster_server",
+            "apex_player_mozambique_cluster_server",
             "Cluster name presenting API",
             registry=registry,
         )
 
         self.processing_time = Gauge(
-            "player_processing_time",
+            "apex_player_processing_time",
             "API Processing Time in milliseconds",
             registry=registry,
         )
