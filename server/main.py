@@ -451,7 +451,7 @@ class ApexCollector:
         self.current_session_remaining.set(
             self.map_stats_collector.current_map_remaining
         )
-        self.next_session_map.info({"next_map_name": next_map_name})
+        self.next_session_map.info({"map_name": next_map_name})
         self.next_session_duration.set(self.map_stats_collector.next_map_duration)
         self.next_session_start.set(self.map_stats_collector.next_map_start - int(time.time()))
 
@@ -469,19 +469,19 @@ class ApexCollector:
         self.banned.info({"banned": str(self.player_stats_collector.banned)})
         self.ban_duration.set(self.player_stats_collector.ban_duration)
         self.br_rank_name.info(
-            {"br_rank_name": self.player_stats_collector.br_rank_name}
+            {"rank_name": self.player_stats_collector.br_rank_name}
         )
         self.br_rank_score.set(self.player_stats_collector.br_rank_score)
         self.br_rank_div.set(self.player_stats_collector.br_rank_div)
         self.arena_rank_name.info(
-            {"arena_rank_name": self.player_stats_collector.arena_rank_name}
+            {"rank_name": self.player_stats_collector.arena_rank_name}
         )
         self.arena_rank_score.set(self.player_stats_collector.arena_rank_score)
         self.arena_rank_div.set(self.player_stats_collector.arena_rank_div)
         self.battle_pass_level.set(self.player_stats_collector.battle_pass_level)
         self.battle_pass_history.set(self.player_stats_collector.battle_pass_history)
         self.lobby_state.info(
-            {"lobby_state": self.player_stats_collector.lobby_state}
+            {"state": self.player_stats_collector.lobby_state}
         )  # TODO: convert to ENUM
         self.is_online.set(int(self.player_stats_collector.is_online))
         self.is_in_game.set(int(self.player_stats_collector.is_in_game))
@@ -489,16 +489,16 @@ class ApexCollector:
             {"party_full": str(self.player_stats_collector.party_full)}
         )
         self.selected_legend.info(
-            {"selected_legend": self.player_stats_collector.selected_legend}
+            {"legend_name": self.player_stats_collector.selected_legend}
         )
         self.active_legend.info(
-            {"active_legend": self.player_stats_collector.current_legend_name}
+            {"legend_name": self.player_stats_collector.current_legend_name}
         )
         self.active_legend_kills.set(
             self.player_stats_collector.current_legend_br_kills
         )
         self.current_state.info(
-            {"current_state": self.player_stats_collector.current_state}
+            {"state": self.player_stats_collector.current_state}
         )
         for legend_name, kills in self.player_stats_collector.all_legends_kills.items():
             self.legend_kills.labels(legend_name).set(kills)
