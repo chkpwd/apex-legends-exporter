@@ -170,7 +170,7 @@ class PlayerStatsCollector:
             player_stats = requests.get(
                 self.URL,
                 headers=self.headers,
-                params={"player_name": self.player_name, "platform": self.platform},
+                params={"player": self.player_name, "platform": self.platform},
                 timeout=10,
             ).json()
         else:
