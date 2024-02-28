@@ -293,7 +293,7 @@ class ApexCollector:
 
         self.next_session_start = Gauge(
             "apex_next_map_start_total",
-            "Start time of the next map in minutes",
+            "Seconds until the next map starts",
             registry=registry,
         )
 
@@ -453,7 +453,7 @@ class ApexCollector:
         )
         self.next_session_map.info({"next_map_name": next_map_name})
         self.next_session_duration.set(self.map_stats_collector.next_map_duration)
-        self.next_session_start.set(self.map_stats_collector.next_map_start)
+        self.next_session_start.set(self.map_stats_collector.next_map_start - int(time.time()))
 
         # Define Prometheus Metrics for Player Stats
         self.player_identifier.info(
