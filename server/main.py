@@ -40,6 +40,7 @@ class MapDataCollector:
         self.current_map_name = ""
         self.current_map_duration = 0
         self.current_map_remaining = 0
+        self.current_map_image = ""
 
         # Data from next map rotation
         self.next_map_name = ""
@@ -68,6 +69,8 @@ class MapDataCollector:
 
         self.current_map_remaining = current_map_data["remainingMins"]
         self.next_map_start = next_map_data["start"]
+
+        self.current_map_image = current_map_data["asset"]
 
 class PlayerStatsCollector:
     """Class to collect player stats"""
@@ -287,6 +290,12 @@ class ApexCollector:
             registry=registry,
         )
 
+        self.current_session_image = Info(
+            "apex_current_map_image",
+            "Image of the current map",
+            registry=registry,
+        )
+
         self.next_session_map = Info(
             "apex_next_map", "Name of the next map", registry=registry
         )
@@ -312,7 +321,7 @@ class ApexCollector:
             "apex_player_platform", "Platform of the player", registry=registry
         )
 
-        self.level = Gauge("player_level", "Level of the player", registry=registry)
+        self.level = Gauge("apex_player_level", "Level of the player", registry=registry)
 
         self.next_level_percentage = Gauge(
             "apex_player_next_level_percentage",
@@ -448,9 +457,8 @@ class ApexCollector:
         # Define Prometheus Metrics for Map Stats
         self.current_session_map.info({"map_name": current_map_name})
         self.current_session_duration.set(self.map_stats_collector.current_map_duration)
-        self.current_session_remaining.set(
-            self.map_stats_collector.current_map_remaining
-        )
+        self.current_session_remaining.set(self.map_stats_collector.current_map_remaining)
+        self.current_session_image.info({"image": self.map_stats_collector.current_map_image})
         self.next_session_map.info({"map_name": next_map_name})
         self.next_session_duration.set(self.map_stats_collector.next_map_duration)
         self.next_session_start.set(self.map_stats_collector.next_map_start - int(time.time()))
