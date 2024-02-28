@@ -457,7 +457,7 @@ class ApexCollector:
 
         # Define Prometheus Metrics for Player Stats
         self.player_identifier.info(
-            {"player_identifier": self.player_stats_collector.player_identifier}
+            {"player": self.player_stats_collector.player_identifier}
         )
         self.player_platform.info(
             {"platform": self.player_stats_collector.player_platform}
