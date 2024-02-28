@@ -218,7 +218,12 @@ class PlayerStatsCollector:
 
         # Data from Current Legend
         self.current_legend_name = player_current_legend_data["LegendName"]
-        self.current_legend_br_kills = player_current_legend_data["data"][0]["value"]
+
+        # This data can sometimes return null
+        if not player_current_legend_data["data"]:
+            self.current_legend_br_kills = 0
+        else:
+            self.current_legend_br_kills = player_current_legend_data["data"][0]["value"]
 
         # Data from All Legends
         self.all_legends_kills = {}
