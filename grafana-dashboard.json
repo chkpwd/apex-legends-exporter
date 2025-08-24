@@ -3,10 +3,6 @@
     "list": [
       {
         "builtIn": 1,
-        "datasource": {
-          "type": "datasource",
-          "uid": "grafana"
-        },
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
@@ -18,9 +14,8 @@
   "description": "Dashboard for the Apex Legends",
   "editable": true,
   "fiscalYearStartMonth": 0,
-  "gnetId": 14629,
   "graphTooltip": 1,
-  "id": 25,
+  "id": 347,
   "links": [
     {
       "asDropdown": false,
@@ -59,14 +54,9 @@
       "url": "$map_image_url"
     }
   ],
-  "liveNow": false,
   "panels": [
     {
       "collapsed": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "mgmt-srv-01-prometheus"
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -75,23 +65,11 @@
       },
       "id": 223,
       "panels": [],
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "mgmt-srv-01-prometheus"
-          },
-          "refId": "A"
-        }
-      ],
       "title": "Player Stats",
       "type": "row"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "mgmt-srv-01-prometheus"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "mappings": [],
@@ -100,7 +78,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -136,13 +114,10 @@
         "textMode": "name",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.2",
+      "pluginVersion": "12.1.0",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "mgmt-srv-01-prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "apex_player_identifier_info{job=\"apex-legends-exporter\"}",
           "instant": false,
@@ -155,10 +130,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "mgmt-srv-01-prometheus"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "mappings": [],
@@ -167,7 +139,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               }
             ]
           },
@@ -199,13 +171,10 @@
         "textMode": "value",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.2",
+      "pluginVersion": "12.1.0",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "mgmt-srv-01-prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "apex_player_level{job=\"apex-legends-exporter\"}",
           "instant": false,
@@ -218,10 +187,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "mgmt-srv-01-prometheus"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "mappings": [],
@@ -230,7 +196,7 @@
             "steps": [
               {
                 "color": "purple",
-                "value": null
+                "value": 0
               },
               {
                 "color": "blue",
@@ -282,13 +248,10 @@
         "textMode": "value_and_name",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.2",
+      "pluginVersion": "12.1.0",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "mgmt-srv-01-prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "exemplar": true,
           "expr": "apex_player_legend_kills{job=\"apex-legends-exporter\"}",
@@ -302,10 +265,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "mgmt-srv-01-prometheus"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "mappings": [],
@@ -314,7 +274,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -350,13 +310,10 @@
         "textMode": "name",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.2",
+      "pluginVersion": "12.1.0",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "mgmt-srv-01-prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "apex_next_map_info{job=\"apex-legends-exporter\"}",
           "instant": false,
@@ -369,10 +326,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "mgmt-srv-01-prometheus"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "mappings": [],
@@ -381,7 +335,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               }
             ]
           },
@@ -413,13 +367,10 @@
         "textMode": "value",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.2",
+      "pluginVersion": "12.1.0",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "mgmt-srv-01-prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "apex_next_map_start_total{job=\"apex-legends-exporter\"}",
           "instant": false,
@@ -432,10 +383,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "mgmt-srv-01-prometheus"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "mappings": [],
@@ -444,7 +392,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -480,13 +428,10 @@
         "textMode": "name",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.2",
+      "pluginVersion": "12.1.0",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "mgmt-srv-01-prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "apex_current_map_info{job=\"apex-legends-exporter\"}",
           "instant": false,
@@ -499,10 +444,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "mgmt-srv-01-prometheus"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "mappings": [],
@@ -511,7 +453,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               }
             ]
           },
@@ -543,13 +485,10 @@
         "textMode": "value",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.2",
+      "pluginVersion": "12.1.0",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "mgmt-srv-01-prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "apex_current_map_remaining_total{job=\"apex-legends-exporter\"}",
           "instant": false,
@@ -562,10 +501,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "mgmt-srv-01-prometheus"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "mappings": [],
@@ -574,7 +510,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -610,13 +546,10 @@
         "textMode": "name",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.2",
+      "pluginVersion": "12.1.0",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "mgmt-srv-01-prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "apex_player_platform_info{job=\"apex-legends-exporter\"}",
           "instant": false,
@@ -629,10 +562,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "mgmt-srv-01-prometheus"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "mappings": [],
@@ -641,7 +571,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               }
             ]
           },
@@ -673,13 +603,10 @@
         "textMode": "value",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.2",
+      "pluginVersion": "12.1.0",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "mgmt-srv-01-prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "apex_player_next_level_percentage{job=\"apex-legends-exporter\"}",
           "instant": false,
@@ -692,10 +619,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "mgmt-srv-01-prometheus"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -708,7 +632,7 @@
             "steps": [
               {
                 "color": "blue",
-                "value": null
+                "value": 0
               }
             ]
           },
@@ -741,13 +665,10 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.2",
+      "pluginVersion": "12.1.0",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "mgmt-srv-01-prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "exemplar": true,
           "expr": "apex_player_kills_total{job=\"apex-legends-exporter\"}",
@@ -762,10 +683,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "mgmt-srv-01-prometheus"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "mappings": [],
@@ -774,7 +692,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -810,13 +728,10 @@
         "textMode": "name",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.2",
+      "pluginVersion": "12.1.0",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "mgmt-srv-01-prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "apex_player_selected_legend_info{job=\"apex-legends-exporter\"}",
           "instant": false,
@@ -829,10 +744,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "mgmt-srv-01-prometheus"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -845,7 +757,7 @@
             "steps": [
               {
                 "color": "blue",
-                "value": null
+                "value": 0
               }
             ]
           },
@@ -878,13 +790,10 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.2",
+      "pluginVersion": "12.1.0",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "mgmt-srv-01-prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "exemplar": true,
           "expr": "apex_player_kill_death_ratio{job=\"apex-legends-exporter\"}",
@@ -899,10 +808,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "mgmt-srv-01-prometheus"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -915,7 +821,7 @@
             "steps": [
               {
                 "color": "blue",
-                "value": null
+                "value": 0
               }
             ]
           },
@@ -948,13 +854,10 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.2",
+      "pluginVersion": "12.1.0",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "mgmt-srv-01-prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "exemplar": true,
           "expr": "csgo_stats_metric{name=\"total_deaths\", player_name=\"$player\"}",
           "interval": "",
@@ -967,10 +870,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "mgmt-srv-01-prometheus"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -983,7 +883,7 @@
             "steps": [
               {
                 "color": "blue",
-                "value": null
+                "value": 0
               }
             ]
           },
@@ -1016,13 +916,10 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.2",
+      "pluginVersion": "12.1.0",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "mgmt-srv-01-prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "exemplar": true,
           "expr": "csgo_stats_metric{name=\"total_damage_done\", player_name=\"$player\"}",
           "interval": "",
@@ -1035,27 +932,21 @@
       "type": "stat"
     }
   ],
+  "preload": false,
   "refresh": "",
-  "schemaVersion": 39,
+  "schemaVersion": 41,
   "tags": [],
   "templating": {
     "list": [
       {
         "current": {
-          "isNone": true,
-          "selected": false,
-          "text": "None",
+          "text": "",
           "value": ""
         },
-        "datasource": {
-          "type": "prometheus",
-          "uid": "mgmt-srv-01-prometheus"
-        },
+        "datasource": "${DS_PROMETHEUS}",
         "definition": "label_values({scrape_job=\"apex-legends-exporter\"},player_name)",
-        "hide": 0,
         "includeAll": false,
         "label": "job",
-        "multi": false,
         "name": "job",
         "options": [],
         "query": {
@@ -1065,27 +956,19 @@
         },
         "refresh": 1,
         "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
         "type": "query"
       },
       {
         "current": {
-          "isNone": true,
-          "selected": false,
-          "text": "None",
+          "text": "",
           "value": ""
         },
-        "datasource": {
-          "type": "prometheus",
-          "uid": "mgmt-srv-01-prometheus"
-        },
+        "datasource": "${DS_PROMETHEUS}",
         "definition": "label_values(apex_current_map_image_info{image=\"$map_image_url\"},image)",
         "description": "URL of the map image",
         "hide": 1,
         "includeAll": false,
         "label": "map_image_url",
-        "multi": false,
         "name": "map_image_url",
         "options": [],
         "query": {
@@ -1095,9 +978,17 @@
         },
         "refresh": 1,
         "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
         "type": "query"
+      },
+      {
+        "current": null,
+        "label": "prometheus",
+        "name": "DS_PROMETHEUS",
+        "options": [],
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "type": "datasource"
       }
     ]
   },
@@ -1109,6 +1000,5 @@
   "timezone": "",
   "title": "Apex Legends",
   "uid": "JLKgLozgk",
-  "version": 11,
-  "weekStart": ""
+  "version": 2
 }
